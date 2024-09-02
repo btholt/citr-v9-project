@@ -1,0 +1,19 @@
+{
+  "name": "citr-v9-projects",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "eslint"
+  },
+  "keywords": [],
+  "author": "Brian Holt",
+  "license": "Apache-2.0",
+  "description": "The Complete Intro to React v9, as taught by Brian Holt for Frontend Masters",
+  "devDependencies": {
+    "eslint": "9.9.1",
+    "eslint-config-prettier": "9.1.0",
+    "globals": "15.9.0",
+    "prettier": "3.3.3"
+  }
+}
