@@ -1,0 +1,29 @@
+{
+  "name": "citr-v9-projects",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "eslint",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "type": "module",
+  "author": "Brian Holt",
+  "license": "Apache-2.0",
+  "description": "The Complete Intro to React v9, as taught by Brian Holt for Frontend Masters",
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.3.1",
+    "eslint": "9.9.1",
+    "eslint-config-prettier": "9.1.0",
+    "globals": "15.9.0",
+    "prettier": "3.3.3",
+    "vite": "5.4.2"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}
