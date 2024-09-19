@@ -67,6 +67,45 @@ server.get("/api/pizzas", async function getPizzas(req, res) {
   res.send(responsePizzas);
 });
 
+server.get("/api/pizza-of-the-day", async function getPizzaOfTheDay(req, res) {
+  const pizzas = await db.all(
+    `SELECT 
+      pizza_type_id as id, name, category, ingredients as description
+    FROM 
+      pizza_types`
+  );
+
+  const daysSinceEpoch = Math.floor(Date.now() / 86400000);
+  const pizzaIndex = daysSinceEpoch % pizzas.length;
+  const pizza = pizzas[pizzaIndex];
+
+  const sizes = await db.all(
+    `SELECT
+      size, price
+    FROM
+      pizzas
+    WHERE
+      pizza_type_id = ?`,
+    [pizza.id]
+  );
+
+  const sizeObj = sizes.reduce((acc, current) => {
+    acc[current.size] = +current.price;
+    return acc;
+  }, {});
+
+  const responsePizza = {
+    id: pizza.id,
+    name: pizza.name,
+    category: pizza.category,
+    description: pizza.description,
+    image: `/public/pizzas/${pizza.id}.webp`,
+    sizes: sizeObj,
+  };
+
+  res.send(responsePizza);
+});
+
 server.get("/api/orders", async function getOrders(req, res) {
   const id = req.query.id;
   const orders = await db.all("SELECT order_id, date, time FROM orders");
