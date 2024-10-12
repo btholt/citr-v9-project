@@ -58,12 +58,6 @@ server.get("/api/pizzas", async function getPizzas(req, res) {
     };
   });
 
-  // const responsePizzas = pizzas.map((pizza) => ({
-  //   id: pizza.pizza_type_id,
-  //   name: pizza.name,
-  //   category: pizza.category,
-  //   image: `/public/pizzas/${pizza.pizza_type_id}.webp`,
-  // }));
   res.send(responsePizzas);
 });
 
@@ -156,6 +150,63 @@ server.get("/api/order", async function getOrders(req, res) {
     order: Object.assign({ total }, order),
     orderItems,
   });
+});
+
+server.post("/api/order", async function createOrder(req, res) {
+  const { cart } = req.body;
+
+  const now = new Date();
+  // forgive me Date gods, for I have sinned
+  const time = now.toLocaleTimeString("en-US", { hour12: false });
+  const date = now.toISOString().split("T")[0];
+
+  if (!cart || !Array.isArray(cart) || cart.length === 0) {
+    res.status(400).send({ error: "Invalid order data" });
+    return;
+  }
+
+  try {
+    await db.run("BEGIN TRANSACTION");
+
+    const result = await db.run(
+      "INSERT INTO orders (date, time) VALUES (?, ?)",
+      [date, time]
+    );
+    const orderId = result.lastID;
+
+    const mergedCart = cart.reduce((acc, item) => {
+      const id = item.pizza.id;
+      const size = item.size.toLowerCase();
+      if (!id || !size) {
+        throw new Error("Invalid item data");
+      }
+      const pizzaId = `${id}_${size}`;
+
+      if (!acc[pizzaId]) {
+        acc[pizzaId] = { pizzaId, quantity: 1 };
+      } else {
+        acc[pizzaId].quantity += 1;
+      }
+
+      return acc;
+    }, {});
+
+    for (const item of Object.values(mergedCart)) {
+      const { pizzaId, quantity } = item;
+      await db.run(
+        "INSERT INTO order_details (order_id, pizza_id, quantity) VALUES (?, ?, ?)",
+        [orderId, pizzaId, quantity]
+      );
+    }
+
+    await db.run("COMMIT");
+
+    res.send({ orderId });
+  } catch (error) {
+    console.error(error);
+    await db.run("ROLLBACK");
+    res.status(500).send({ error: "Failed to create order" });
+  }
 });
 
 const start = async () => {
