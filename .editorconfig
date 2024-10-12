@@ -1,0 +1,9 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# Top-most EditorConfig file
+root = true
+
+# Set indentation style to 2 spaces
+[*]
+indent_style = space
+indent_size = 2
