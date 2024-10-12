@@ -2,6 +2,7 @@
   --primary: #da2f04;
   --secondary: #33670a;
   --background: #fffaee;
+  --border: #ccc;
 }
 
 * {
@@ -75,7 +76,7 @@ h2::after {
 }
 
 .order {
-  width: 60%;
+  width: 100%;
   margin-left: 5%;
 }
 
@@ -144,7 +145,7 @@ form > div > div > label {
 
 .pizza img {
   max-width: 200px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border);
   border-radius: 5px;
 }
 
@@ -188,7 +189,7 @@ button {
 }
 
 .pizza-of-the-day {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--border);
   margin-top: 50px;
   width: 100%;
 }
@@ -206,11 +207,30 @@ button {
 .pizza-of-the-day-image {
   max-width: 200px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border);
 }
 
 .pizza-of-the-day-info {
   margin-right: 30px;
   line-height: 2;
   text-align: center;
+}
+
+.order-page {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+}
+
+.cart {
+  border-left: 1px solid var(--border);
+  line-height: 1.5;
+  text-align: center;
+  padding: 15px;
+}
+
+.cart p {
+  margin: 15px 0;
 }
