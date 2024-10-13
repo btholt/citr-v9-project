@@ -3,6 +3,7 @@
   --secondary: #33670a;
   --background: #fffaee;
   --border: #ccc;
+  --font: Pacifico, cursive, sans-serif;
 }
 
 * {
@@ -56,6 +57,13 @@ nav .logo {
   grid-area: logo;
 }
 
+nav > a {
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .nav-cart {
   grid-area: cart;
   display: flex;
@@ -81,11 +89,11 @@ nav .logo {
 
 @font-face {
   font-family: Pacifico;
-  src: url("/public/Pacifico-Regular.otf");
+  src: url("/public/Pacifico-Regular.ttf");
 }
 
 h2 {
-  font-family: Pacifico, cursive, sans-serif;
+  font-family: var(--font);
   font-size: 40px;
   line-height: auto;
   font-weight: 400;
@@ -200,14 +208,16 @@ form > div > div > label {
   justify-content: space-between;
 }
 
-button {
+button,
+.index li a {
   border: 1px solid var(--primary);
   background-color: transparent;
   color: var(--primary);
-  font-family: Pacifico, cursive, sans-serif;
+  font-family: var(--font);
   font-size: 20px;
   padding: 5px 15px;
   border-radius: 5px;
+  display: inline-block;
   cursor: pointer;
 }
 
@@ -268,4 +278,50 @@ button {
 
 .cart p {
   margin: 15px 0;
+}
+
+.index h1 {
+  color: var(--primary);
+  font-family: var(--font);
+  font-weight: normal;
+}
+
+.index {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 700px;
+  margin: 120px auto;
+}
+
+.index-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.index-brand p {
+  color: var(--secondary);
+  font-weight: bold;
+  font-size: 40px;
+  text-transform: uppercase;
+  max-width: 315px;
+}
+
+.index ul {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.index li,
+.index li a {
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+}
+
+.index li a {
+  margin-bottom: 10px;
 }
