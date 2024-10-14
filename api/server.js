@@ -209,6 +209,22 @@ server.post("/api/order", async function createOrder(req, res) {
   }
 });
 
+server.get("/api/past-orders", async function getPastOrders(req, res) {
+  try {
+    const page = parseInt(req.query.page, 10) || 1;
+    const limit = 20;
+    const offset = (page - 1) * limit;
+    const pastOrders = await db.all(
+      "SELECT order_id, date, time FROM orders ORDER BY order_id DESC LIMIT 10 OFFSET ?",
+      [offset]
+    );
+    res.send(pastOrders);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ error: "Failed to fetch past orders" });
+  }
+});
+
 const start = async () => {
   try {
     await server.listen({ port: PORT });

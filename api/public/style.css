@@ -221,6 +221,11 @@ button,
   cursor: pointer;
 }
 
+button:disabled {
+  opacity: 0.5;
+  background-color: #ccc;
+}
+
 .order-pizza {
   width: 100%;
   margin-left: 25px;
@@ -324,4 +329,57 @@ button,
 
 .index li a {
   margin-bottom: 10px;
+}
+
+.past-orders {
+  min-height: 650px;
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.past-orders table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  border: 1px solid #dddddd;
+}
+
+.past-orders thead tr {
+  background-color: var(--secondary);
+  color: #ffffff;
+  text-align: left;
+}
+
+.past-orders th,
+.past-orders td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.past-orders tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.past-orders tbody tr:nth-of-type(even) {
+  background-color: #f6fef0;
+}
+
+.past-orders tbody tr:last-of-type {
+  border-bottom: 2px solid var(--secondary);
+}
+
+.pages {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.pages > div {
+  font-family: var(--font);
+  color: var(--primary);
+  font-size: 20px;
 }
