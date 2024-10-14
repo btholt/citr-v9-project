@@ -1,4 +1,4 @@
-import React, { StrictMode, useState } from "react";
+import { StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
 import Order from "./Order";
 import PizzaOfTheDay from "./PizzaOfTheDay";

@@ -13,8 +13,8 @@ export default function Cart({ cart, checkout }) {
     <div className="cart">
       <h2>Cart</h2>
       <ul>
-        {cart.map((item) => (
-          <li>
+        {cart.map((item, index) => (
+          <li key={index}>
             <span className="size">{item.size}</span> –
             <span className="type">{item.pizza.name}</span> –
             <span className="price">{item.price}</span>
