@@ -338,7 +338,7 @@ button:disabled {
   margin: 0 auto;
 }
 
-.past-orders table {
+table {
   width: 100%;
   border-collapse: collapse;
   margin: 25px 0;
@@ -348,27 +348,27 @@ button:disabled {
   border: 1px solid #dddddd;
 }
 
-.past-orders thead tr {
+thead tr {
   background-color: var(--secondary);
   color: #ffffff;
   text-align: left;
 }
 
-.past-orders th,
-.past-orders td {
+th,
+td {
   padding: 12px 15px;
   text-align: center;
 }
 
-.past-orders tbody tr {
+tbody tr {
   border-bottom: 1px solid #dddddd;
 }
 
-.past-orders tbody tr:nth-of-type(even) {
+tbody tr:nth-of-type(even) {
   background-color: #f6fef0;
 }
 
-.past-orders tbody tr:last-of-type {
+tbody tr:last-of-type {
   border-bottom: 2px solid var(--secondary);
 }
 
@@ -382,4 +382,31 @@ button:disabled {
   font-family: var(--font);
   color: var(--primary);
   font-size: 20px;
+}
+
+#modal {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal:empty {
+  display: none;
+}
+
+#modal > div {
+  padding: 15px;
+  text-align: center;
+  border-radius: 30px;
+  background: var(--background);
+}
+td img {
+  width: 50px;
 }

@@ -12,6 +12,7 @@ function PastOrdersRoute() {
   const { isLoading, data } = useQuery({
     queryKey: ["past-orders", page],
     queryFn: () => getPastOrders(page),
+    staleTime: 30000,
   });
   if (isLoading) {
     return (
