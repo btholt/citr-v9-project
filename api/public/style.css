@@ -410,3 +410,48 @@ tbody tr:last-of-type {
 td img {
   width: 50px;
 }
+
+.error-boundary {
+  min-height: 400px;
+  text-align: center;
+}
+
+.error-boundary a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.contact input,
+.contact textarea {
+  width: 500px;
+  padding: 8px;
+  border: 2px solid var(--border);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.contact textarea {
+  min-height: 200px;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: var(--primary);
+}
+
+.contact h3 {
+  font-family: var(--font);
+  color: var(--secondary);
+  text-align: center;
+  margin: 50px;
+  font-weight: normal;
+  font-size: 30px;
+}

@@ -203,7 +203,7 @@ server.post("/api/order", async function createOrder(req, res) {
 
     res.send({ orderId });
   } catch (error) {
-    console.error(error);
+    req.log.error(error);
     await db.run("ROLLBACK");
     res.status(500).send({ error: "Failed to create order" });
   }
@@ -220,7 +220,7 @@ server.get("/api/past-orders", async function getPastOrders(req, res) {
     );
     res.send(pastOrders);
   } catch (error) {
-    console.error(error);
+    req.log.error(error);
     res.status(500).send({ error: "Failed to fetch past orders" });
   }
 });
@@ -275,9 +275,26 @@ server.get("/api/past-order/:order_id", async function getPastOrder(req, res) {
       orderItems: formattedOrderItems,
     });
   } catch (error) {
-    console.error(error);
+    req.log.error(error);
     res.status(500).send({ error: "Failed to fetch order" });
   }
+});
+
+server.post("/api/contact", async function contactForm(req, res) {
+  const { name, email, message } = req.body;
+
+  if (!name || !email || !message) {
+    res.status(400).send({ error: "All fields are required" });
+    return;
+  }
+
+  req.log.info(`Contact Form Submission:
+    Name: ${name}
+    Email: ${email}
+    Message: ${message}
+  `);
+
+  res.send({ success: "Message received" });
 });
 
 const start = async () => {
