@@ -16,16 +16,4 @@ export default defineConfig({
     },
   },
   plugins: [TanStackRouterVite(), react()],
-  test: {
-    // setupFiles: ["vitest-browser-react"],
-    // browser: {
-    //   enabled: true,
-    //   name: "firefox",
-    //   provider: "playwright",
-    // },
-    environment: "happy-dom",
-    coverage: {
-      reporter: ["text", "json", "html"],
-    },
-  },
 });
