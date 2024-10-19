@@ -24,5 +24,8 @@ export default defineConfig({
     //   provider: "playwright",
     // },
     environment: "happy-dom",
+    coverage: {
+      reporter: ["text", "json", "html"],
+    },
   },
 });
