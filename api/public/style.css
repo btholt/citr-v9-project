@@ -447,6 +447,10 @@ td img {
   border-color: var(--primary);
 }
 
+.contact input:disabled {
+  background-color: #999;
+}
+
 .contact h3 {
   font-family: var(--font);
   color: var(--secondary);
