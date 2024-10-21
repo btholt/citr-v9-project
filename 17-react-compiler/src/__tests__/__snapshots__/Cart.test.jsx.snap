@@ -1,0 +1,97 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`snapshot with nothing in cart 1`] = `
+<DocumentFragment>
+  <div
+    class="cart"
+  >
+    <h2>
+      Cart
+    </h2>
+    <ul />
+    <p>
+      Total: $0.00
+    </p>
+    <button>
+      Checkout
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`snapshot with some stuff in cart 1`] = `
+<DocumentFragment>
+  <div
+    class="cart"
+  >
+    <h2>
+      Cart
+    </h2>
+    <ul>
+      <li>
+        <span
+          class="size"
+        >
+          M
+        </span>
+         –
+        <span
+          class="type"
+        >
+          The Pepperoni Pizza
+        </span>
+         –
+        <span
+          class="price"
+        >
+          $12.50
+        </span>
+      </li>
+      <li>
+        <span
+          class="size"
+        >
+          L
+        </span>
+         –
+        <span
+          class="type"
+        >
+          The Chicken Pesto Pizza
+        </span>
+         –
+        <span
+          class="price"
+        >
+          $20.75
+        </span>
+      </li>
+      <li>
+        <span
+          class="size"
+        >
+          S
+        </span>
+         –
+        <span
+          class="type"
+        >
+          The Barbecue Chicken Pizza
+        </span>
+         –
+        <span
+          class="price"
+        >
+          $12.75
+        </span>
+      </li>
+    </ul>
+    <p>
+      Total: $46.00
+    </p>
+    <button>
+      Checkout
+    </button>
+  </div>
+</DocumentFragment>
+`;
