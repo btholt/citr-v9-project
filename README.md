@@ -1,14 +1,25 @@
-Thi<p align="center"><a href="fem"><img alt="react logo" title="React" src="./public/pixel_perfect_pizzas.png" /></a></p>
+## Complete Intro to React, v9 Course
 
+This is a companion repository for the [Complete Intro to React, v9][fem] course on Frontend Masters.
 [![Frontend Masters](https://static.frontendmasters.com/assets/brand/logos/full.png)][fem]
 
-# Issues and Pull Requests
+
+## About this Repository
+
+Every step of the project built throughout the course will have a folder that will be a snapshot of the current state of the project. The naming format will be `XX-<name of the lesson>` so you can get a rough idea of order and which lesson the step is coming from. In each snapshot you'll have to run `npm install` again since they are another whole copy of the project.
+
+## Setup Instructions
+
+We recommend using `Node.js version 20` with this course. The project will be built from scratch so most of the folders in this repo are just for reference. Later in the course, the `api` directory will be used to simulate an API server. To get set up, clone the repository:
+
+```bash
+git clone https://github.com/btholt/citr-v9-project.git
+```
+
+
+## Issues and Pull Requests
 
 Please file issues and open pull requests on [the course website repo][repo]. Feel free to open pull requests here, but the issues should go in the other repo.
-
-# Project Files
-
-[Please go here][project] for the project files.
 
 # License
 
