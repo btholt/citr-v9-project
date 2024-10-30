@@ -21,7 +21,7 @@ git clone https://github.com/btholt/citr-v9-project.git
 
 Please file issues and open pull requests on [the course website repo][repo]. Feel free to open pull requests here, but the issues should go in the other repo.
 
-# License
+## License
 
 The content of this workshop is licensed under CC-BY-NC-4.0. Feel free to share freely but do not resell my content.
 
@@ -33,3 +33,25 @@ The code, including the code of the site itself and the code in the exercises, a
 [repo]: https://github.com/btholt/complete-intro-to-react-v9
 
 [React icons created by Pixel perfect - Flaticon](https://www.flaticon.com/free-icons/react)
+
+## Workshop Day 2 Instructions
+
+> Make sure you have Node.js version 20.x.x installed
+
+If you missed Day 1 of the **Complete Intro to React, v9 workshop**, follow these instructions to get set up for Day 2.
+
+```bash
+# Clone this repo and use the 09-routing directory as a starting point
+git clone https://github.com/btholt/citr-v9-project.git
+cd citr-v9-project/09-routing
+npm install
+npm run dev # this starts the Vite development server on http://localhost:5173
+```
+
+You also need to run the API server which is our data source and static file server. Just leave this server running in a separate terminal:
+
+```bash
+# Open a second terminal and navigate to the citr-v9-project/api directory
+npm install # install the dependencies
+npm run dev # run the server
+```
