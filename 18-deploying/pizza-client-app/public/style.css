@@ -1,0 +1,461 @@
+:root {
+  --primary: #da2f04;
+  --secondary: #33670a;
+  --background: #fffaee;
+  --border: #ccc;
+  --font: Pacifico, cursive, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  border: none;
+  outline: none;
+}
+
+nav {
+  width: 100%;
+  display: grid;
+  border-bottom: 1px solid #ccc;
+  grid-template-areas: ". logo logo logo cart";
+}
+
+.logo {
+  width: 100%;
+  height: 110px;
+  background-position: left;
+  background-repeat: no-repeat;
+  content: url("/padre_gino.svg");
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+nav .logo {
+  width: inherit;
+  grid-area: logo;
+}
+
+nav > a {
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-cart {
+  grid-area: cart;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.nav-cart-number {
+  background-color: var(--secondary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -17px;
+  left: -17px;
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+  border-radius: 50%;
+}
+
+@font-face {
+  font-family: Pacifico;
+  src: url("/Pacifico-Regular.ttf");
+}
+
+h2 {
+  font-family: var(--font);
+  font-size: 40px;
+  line-height: auto;
+  font-weight: 400;
+  color: var(--primary);
+  text-align: center;
+}
+
+h2::after {
+  content: "";
+  display: inline-block;
+  margin-left: 25px;
+  width: 150px;
+  height: 30px;
+  background: conic-gradient(
+    transparent 90deg,
+    var(--primary) 90deg 180deg,
+    transparent 180deg 270deg,
+    var(--primary) 270deg
+  );
+  background-repeat: repeat;
+  background-size: 30px 30px;
+  background-position: top left;
+}
+
+.order {
+  width: 100%;
+  margin-left: 5%;
+}
+
+form div {
+  margin: 10px 0;
+  text-align: center;
+}
+
+form > div {
+  padding: 15px;
+  width: 100%;
+}
+
+form > div:first-child {
+  border-right: 1px solid #ccc;
+}
+
+form > div > div > label {
+  display: block;
+  font-size: 20px;
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+
+form select {
+  display: block;
+  font-size: 16px;
+  padding: 5px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+form input[type="radio"] {
+  display: none;
+}
+
+form input + label {
+  height: 80px;
+  width: 80px;
+  border: 1px solid #999;
+  background-color: #ccc;
+  color: #999;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 15px 10px 15px;
+}
+
+form input:checked + label {
+  color: #333;
+  background-color: #fff;
+}
+
+form > div > div > label {
+  display: block;
+  font-size: 20px;
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+
+.pizza {
+  line-height: 1.5;
+}
+
+.pizza img {
+  max-width: 200px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+}
+
+.pizza h1 {
+  font-weight: normal;
+  color: var(--secondary);
+  font-size: 25px;
+}
+
+.pizza p {
+  margin-bottom: 5px;
+}
+
+.order form {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+button,
+.index li a {
+  border: 1px solid var(--primary);
+  background-color: transparent;
+  color: var(--primary);
+  font-family: var(--font);
+  font-size: 20px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  background-color: #ccc;
+}
+
+.order-pizza {
+  width: 100%;
+  margin-left: 25px;
+}
+
+.pizza {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pizza-of-the-day {
+  border-top: 1px solid var(--border);
+  margin-top: 50px;
+  width: 100%;
+}
+
+.pizza-of-the-day > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pizza-of-the-day > h2 {
+  text-align: center;
+}
+
+.pizza-of-the-day-image {
+  max-width: 200px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+}
+
+.pizza-of-the-day-info {
+  margin-right: 30px;
+  line-height: 2;
+  text-align: center;
+}
+
+.order-page {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+}
+
+.cart {
+  border-left: 1px solid var(--border);
+  line-height: 1.5;
+  text-align: center;
+  padding: 15px;
+}
+
+.cart p {
+  margin: 15px 0;
+}
+
+.index h1 {
+  color: var(--primary);
+  font-family: var(--font);
+  font-weight: normal;
+}
+
+.index {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 700px;
+  margin: 120px auto;
+}
+
+.index-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.index-brand p {
+  color: var(--secondary);
+  font-weight: bold;
+  font-size: 40px;
+  text-transform: uppercase;
+  max-width: 315px;
+}
+
+.index ul {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.index li,
+.index li a {
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+}
+
+.index li a {
+  margin-bottom: 10px;
+}
+
+.past-orders {
+  min-height: 650px;
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  border: 1px solid #dddddd;
+}
+
+thead tr {
+  background-color: var(--secondary);
+  color: #ffffff;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: #f6fef0;
+}
+
+tbody tr:last-of-type {
+  border-bottom: 2px solid var(--secondary);
+}
+
+.pages {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.pages > div {
+  font-family: var(--font);
+  color: var(--primary);
+  font-size: 20px;
+}
+
+#modal {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal:empty {
+  display: none;
+}
+
+#modal > div {
+  padding: 15px;
+  text-align: center;
+  border-radius: 30px;
+  background: var(--background);
+}
+td img {
+  width: 50px;
+}
+
+.error-boundary {
+  min-height: 400px;
+  text-align: center;
+}
+
+.error-boundary a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.contact input,
+.contact textarea {
+  width: 500px;
+  padding: 8px;
+  border: 2px solid var(--border);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.contact textarea {
+  min-height: 200px;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: var(--primary);
+}
+
+.contact input:disabled {
+  background-color: #999;
+}
+
+.contact h3 {
+  font-family: var(--font);
+  color: var(--secondary);
+  text-align: center;
+  margin: 50px;
+  font-weight: normal;
+  font-size: 30px;
+}

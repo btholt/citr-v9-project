@@ -1,0 +1,20 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "description": "",
+  "dependencies": {
+    "@fastify/static": "7.0.4",
+    "fastify": "4.28.1",
+    "pino-pretty": "11.2.2",
+    "promised-sqlite3": "2.1.0"
+  }
+}
