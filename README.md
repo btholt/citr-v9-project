@@ -30,7 +30,7 @@ The content of this workshop is licensed under CC-BY-NC-4.0. Feel free to share 
 
 The code, including the code of the site itself and the code in the exercises, are licensed under Apache 2.0.
 
-[fem]: https://frontendmasters.com/workshops/complete-react-v9/
+[fem]: https://frontendmasters.com/courses/complete-react-v9/
 [repo]: https://github.com/btholt/complete-intro-to-react-v9
 
 [React icons created by Pixel perfect - Flaticon](https://www.flaticon.com/free-icons/react)
