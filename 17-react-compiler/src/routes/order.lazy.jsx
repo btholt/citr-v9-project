@@ -82,7 +82,7 @@ function Order() {
               </select>
             </div>
             <div>
-              <label htmlFor="pizza-size">Pizza Type</label>
+              <label htmlFor="pizza-size">Pizza Size</label>
               <div>
                 <span>
                   <input
