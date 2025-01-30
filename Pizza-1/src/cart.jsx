@@ -1,13 +1,9 @@
-import { useContext } from "react";
-import { CartContext } from "./contexts";
-
 const intl = new Intl.NumberFormat("en-In", {
   style: "currency",
   currency: "INR", // feel free to change to your local currency
 });
 
-export default function Cart({ checkout }) {
-  const [cart] = useContext(CartContext);
+export default function Cart({ cart, checkout }) {
   const total = cart.reduce((a, b) => a + b.pizza.sizes[b.size], 0);
 
   return (

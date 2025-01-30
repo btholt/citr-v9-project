@@ -48,6 +48,15 @@ function Order() {
     setLoading(false);
   }
 
+  function addToCart() {
+    setCart((prev) => {
+      return [
+        ...prev,
+        { pizza: selectedPizza, size: pizzaSize, price: prices },
+      ];
+    });
+  }
+
   useEffect(() => {
     fetchPizzaTypes();
   }, []);
@@ -56,17 +65,7 @@ function Order() {
     <div className="order-page">
       <div className="order">
         <h2>Create Order</h2>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            setCart((prev) => {
-              return [
-                ...prev,
-                { pizza: selectedPizza, size: pizzaSize, price: prices },
-              ];
-            });
-          }}
-        >
+        <form action={addToCart}>
           <div>
             <div>
               <label htmlFor="pizza-type">Pizza Type</label>
@@ -137,7 +136,7 @@ function Order() {
           )}
         </form>
       </div>
-      {loading ? <h2>LOADING …</h2> : <Cart checkout={checkout} />}
+      {loading ? <h2>LOADING …</h2> : <Cart cart={cart} checkout={checkout} />}
     </div>
   );
 }

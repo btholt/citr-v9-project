@@ -5,9 +5,13 @@ export function usePizzaOfTheDay() {
 
   useEffect(() => {
     async function getPizzaOfTheDay() {
-      const pizza = await fetch("/api/pizza-of-the-day");
-      const data = await pizza.json();
-      setPizzaOfTheDay(data);
+      try {
+        const pizza = await fetch("/api/pizza-of-the-day");
+        const data = await pizza.json();
+        setPizzaOfTheDay(data);
+      } catch (e) {
+        console.error(e);
+      }
     }
     getPizzaOfTheDay();
   }, []);
